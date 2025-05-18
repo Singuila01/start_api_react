@@ -1,18 +1,31 @@
 import React from 'react';
 
 const HomePage = () => (
-    <div style={{ maxWidth: 800, margin: '40px auto', padding: 24 }}>
+    <div className='container'>
         <h1>Bienvenue sur Rennes Transport Explorer</h1>
         <p>
             Ce site vous permet d'explorer en détail toutes les informations du réseau de transport de Rennes grâce à l'API STAR. 
             Retrouvez les horaires en temps réel, les itinéraires, les arrêts, les lignes de bus et de métro, ainsi que de nombreuses données utiles pour vos déplacements quotidiens.
         </p>
         <ul>
-            <li>Consultez les horaires en temps réel pour chaque arrêt</li>
-            <li>Recherchez une ligne ou un arrêt spécifique</li>
-            <li>Visualisez les plans des lignes et les correspondances</li>
-            <li>Accédez à des statistiques et informations sur le trafic</li>
-            <li>Découvrez les nouveautés et alertes du réseau</li>
+            <li>
+                <p>Consultez les horaires en temps réel pour chaque arrêt</p>
+            </li>
+            <li>
+                <p>Recherchez une ligne ou un arrêt spécifique</p>
+            </li>
+            <li>
+                <p>Visualisez les itinéraires de bus et de métro</p>
+            </li>
+            <li>
+                <p>Accédez aux informations détaillées sur chaque ligne</p>
+            </li>
+            <li>
+                <p>Découvrez les arrêts à proximité de votre position actuelle</p>
+            </li>
+            <li>
+                <p>Découvrez les nouveautés et alertes du réseau</p>
+            </li>
         </ul>
         <p>
             Ce projet utilise l’API officielle STAR pour vous offrir une expérience complète et à jour sur les transports en commun de Rennes Métropole.
