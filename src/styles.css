@@ -1,0 +1,33 @@
+.bus-lines ul{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    max-width: 1650px;
+    box-sizing: border-box;
+    list-style: none;
+}
+.bus-lines ul li{
+    padding: 10px;
+    background: #f0f0f0;
+    transition: .3s all;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bus-lines ul li:hover{
+    height: 100%;
+}
+.bus-lines ul li .nom_long {
+    /* display: none; */
+    transition: .3s all;
+    transform: translateY(100px);
+    opacity: 0;
+}
+.bus-lines ul li:hover .nom_long {
+    display: block;
+    transform: initial;
+    opacity: 1;
+}
