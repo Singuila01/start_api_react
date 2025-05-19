@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../styles.css'
 
 function BusLines() {
-  const [lines, setLines] = useState([]);
-  const [loading, setLoading] = useState(true);
+    const [lines, setLines] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('https://data.explore.star.fr/api/explore/v2.1/catalog/datasets/tco-bus-topologie-lignes-td/records?order_by=id&limit=100')
         .then(response => response.json())
         .then(data => {
-            console.log('API Response:', data); // Utile pour voir la structure
             setLines(data.results); // Accès direct à `results`
-            console.log(data.results); // Affiche les résultats dans la console
             setLoading(false);
         })
         .catch(error => {
