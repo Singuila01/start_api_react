@@ -4,19 +4,16 @@ import './styles.css'; // Assuming you have a CSS file for styles
 
 function Header() {
     return (
-        <header style={{
-            background: '#282c34',
-            color: 'white',
-            padding: '16px 0',
-            marginBottom: 32,
-            textAlign: 'center'
-        }}>
+        <header className='header'>
             <nav>
-                <Link to="/" style={{ color: 'white', margin: '0 20px', textDecoration: 'none', fontWeight: 'bold' }}>
+                <Link to="/">
                     Accueil
                 </Link>
-                <Link to="/bus" style={{ color: 'white', margin: '0 20px', textDecoration: 'none', fontWeight: 'bold' }}>
+                <Link to="/bus">
                     Lignes de bus
+                </Link>
+                <Link to="/metro">
+                    Horaires du métro
                 </Link>
             </nav>
         </header>
