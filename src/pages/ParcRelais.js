@@ -26,9 +26,9 @@ function ParcRelais() {
                     {parcs.map(parc => (
                         <li key={parc.idarret} >
                             <h2 className={parc.etatouverture}>{parc.nom} <br/><span>{parc.etatouverture}</span></h2>
-                            <p>Nombre de places : {parc.capaciteparking}</p>
-                            <p>Places disponibles : {parc.capacitesoliste}</p>
-                            <p>Dernière mise à jour : {parc.lastupdate}</p>
+                            <p>{parc.capaciteparking} places</p>
+                            <p>{parc.capacitesoliste} places disponibles</p>
+                            <p>Mise à jour le {parc.lastupdate}</p>
                         </li>
                     ))}
                 </ul>
