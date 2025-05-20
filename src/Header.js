@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './styles.css'; // Assuming you have a CSS file for styles
 
 function Header() {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+
     return (
         <header className='header'>
             <nav>
@@ -16,9 +19,15 @@ function Header() {
                     Horaires du métro
                 </Link>
             </nav>
-            <div className='content'>
-                <h1>Bienvenue sur Rennes Transport Explorer</h1>
-            </div>
+            {isHome ? (
+                <div className='content_home'>
+                    <h1>Bienvenue sur Rennes Transport Explorer</h1>
+                </div>
+            ) : (
+                <div className='content_other'>
+                    <h1>Vous êtes sur la page XXX</h1>
+                </div>
+            )}
         </header>
     );
 }
