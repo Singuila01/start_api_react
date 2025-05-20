@@ -2,9 +2,6 @@ import React from 'react';
 
 const HomePage = () => (
     <div className='container'>
-        <div className='header'>
-            <h1>Bienvenue sur Rennes Transport Explorer</h1>
-        </div>
         <div className='presentation'>
             <h1>Présentation</h1>
             <p>
