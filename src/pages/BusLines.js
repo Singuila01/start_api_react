@@ -4,12 +4,16 @@ import '../styles.css'
 function BusLines() {
     const [lines, setLines] = useState([]);
     const [loading, setLoading] = useState(true);
+    // var lignes = [];
 
     useEffect(() => {
         fetch('https://data.explore.star.fr/api/explore/v2.1/catalog/datasets/tco-bus-topologie-lignes-td/records?order_by=id&limit=100')
         .then(response => response.json())
         .then(data => {
             setLines(data.results); // Accès direct à `results`
+
+            // console.log(lignes);
+            
             setLoading(false);
         })
         .catch(error => {
@@ -25,11 +29,11 @@ function BusLines() {
             <h1>Lignes de bus</h1>
             <ul>
                 {lines.map((line, index) => (
-                <li key={index} style={{ backgroundColor: line.couleurligne }}>
-                    <h2>{line.nomcourt}</h2>
+                <li key={index}>
+                    <h2 style={{ backgroundColor: line.couleurligne }}>{line.nomcourt}</h2>
                     <p className='nom_long'>({line.nomlong})</p>
                 </li>
-                ))}
+            ))}
             </ul>
         </div>
     );

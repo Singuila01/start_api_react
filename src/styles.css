@@ -200,18 +200,23 @@ header.header .content h1{
     list-style: none;
 }
 .bus-lines ul li{
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 10px;
-    background: #f0f0f0;
-    transition: .3s all;
     border-radius: 10px;
+    box-sizing: border-box;
+    transition: .3s all;
+    overflow: hidden;
+}
+.bus-lines ul li h2{
+    padding: 10px;
     box-sizing: border-box;
     overflow: hidden;
 }
-.bus-lines ul li:hover{
-    height: 100%;
-}
-.bus-lines ul li .nom_long {
-    /* display: none; */
+/* .bus-lines ul li .nom_long {
     transition: .3s all;
     transform: translateY(100px);
     opacity: 0;
@@ -220,7 +225,7 @@ header.header .content h1{
     display: block;
     transform: initial;
     opacity: 1;
-}
+} */
 
 /* Pied de page */
 .footer{
