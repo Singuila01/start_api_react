@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import MetroTime from './pages/MetroTime';
 import ParcRelais from './pages/ParcRelais';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/metro" element={<MetroTime />} />
                 <Route path="/parc" element={<ParcRelais />} />
             </Routes>
+            <Footer />
         </Router>
     );
 }

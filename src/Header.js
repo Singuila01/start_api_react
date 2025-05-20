@@ -16,6 +16,9 @@ function Header() {
                     Horaires du métro
                 </Link>
             </nav>
+            <div className='content'>
+                <h1>Bienvenue sur Rennes Transport Explorer</h1>
+            </div>
         </header>
     );
 }
