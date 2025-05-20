@@ -227,6 +227,14 @@ header.header .content h1{
     opacity: 1;
 } */
 
+.metro select {
+    margin: 10px;
+    padding: 5px 10px;
+    border: 0;
+    border-bottom: 1px solid #000;
+    background: #e0e0e0;
+}
+
 /* Pied de page */
 .footer{
     background: #282c34;
