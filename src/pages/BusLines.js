@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router";
 import '../styles.css'
 
 function BusLines() {
@@ -30,8 +31,10 @@ function BusLines() {
             <ul>
                 {lines.map((line, index) => (
                 <li key={index}>
-                    <h2 style={{ backgroundColor: line.couleurligne }}>{line.nomcourt}</h2>
-                    <p className='nom_long'>({line.nomlong})</p>
+                    <Link href={`/bus/${line.id}`} to={`/bus/${line.id}`}>
+                        <h2 style={{ backgroundColor: line.couleurligne }}>{line.nomcourt}</h2>
+                        <p className='nom_long'>({line.nomlong})</p>
+                    </Link>
                 </li>
             ))}
             </ul>
