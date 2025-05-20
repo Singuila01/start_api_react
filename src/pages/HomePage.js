@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router";
 
 const HomePage = () => (
     <div className='container'>
@@ -12,7 +13,7 @@ const HomePage = () => (
         <div className='list'>
             <ul>
                 <li>
-                    <p>Consultez les horaires en temps réel pour chaque arrêt</p>
+                    <p>Consultez les horaires en temps réel pour chaque arrêt <span>comming soon</span></p>
                 </li>
                 <li>
                     <p>Recherchez une ligne ou un arrêt spécifique</p>
@@ -21,10 +22,10 @@ const HomePage = () => (
                     <p>Visualisez les itinéraires de bus et de métro</p>
                 </li>
                 <li>
-                    <p>Accédez aux informations détaillées sur chaque ligne</p>
+                    <Link to="/bus">Accédez aux informations détaillées sur chaque ligne</Link>
                 </li>
                 <li>
-                    <p>Découvrez les arrêts à proximité de votre position actuelle</p>
+                    <Link to="/parc">Visualiez les différents parking relais présents sur le réseau</Link>
                 </li>
                 <li>
                     <p>Découvrez les nouveautés et alertes du réseau</p>
