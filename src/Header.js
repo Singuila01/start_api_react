@@ -18,6 +18,9 @@ function Header() {
                 <Link to="/metro">
                     Horaires du métro
                 </Link>
+                <Link to="/velo">
+                    Velos Star
+                </Link>
             </nav>
             {isHome ? (
                 <div className='content_home'>
