@@ -10,6 +10,17 @@ select option span{
     font-weight: 900;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.loading p{
+    font-size: 30px;
+    font-weight: 900;
+}
+
 header.header{
     /* background: #282c34; */
     color: #fff;
@@ -20,6 +31,7 @@ header.header{
 header.header nav{
     position: relative;
     z-index: 10;
+    filter: drop-shadow(0px 0px 2px #000);
 }
 header.header a{
     color: #fff;
@@ -64,6 +76,7 @@ header.header .content_other {
     justify-content: center;
     align-items: center;
     height: calc(50vh - 50px);
+    filter: drop-shadow(0px 0px 2px #000);
     /* background: #696969; */
 }
 

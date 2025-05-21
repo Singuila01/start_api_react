@@ -23,7 +23,7 @@ function BusLines() {
         });
     }, []);
 
-    if (loading) return <p>Chargement...</p>;
+    if (loading) return <div className='loading'><p>Chargement...</p></div>;
 
     return (
         <div className='bus-lines'>
