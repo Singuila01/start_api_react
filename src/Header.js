@@ -8,7 +8,7 @@ function Header() {
 
     return (
         <header className='header'>
-            <nav>
+            <nav className='desktop_nav'>
                 <Link to="/">
                     Accueil
                 </Link>
@@ -21,6 +21,32 @@ function Header() {
                 <Link to="/velo">
                     Velos Star
                 </Link>
+            </nav>
+            <nav className='mobile_nav'>
+                <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+                <label htmlFor="menu-toggle" className="menu-icon open">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <input type="checkbox" id="menu-disable" className="menu-disable"/>
+                <label htmlFor="menu-disable" className="menu-icon close">
+                    <span></span>
+                </label>
+                <div className="mobile_menu">
+                    <Link to="/" onClick={() => document.getElementById('menu-toggle').checked = false}>
+                        Accueil
+                    </Link>
+                    <Link to="/bus" onClick={() => document.getElementById('menu-toggle').checked = false}>
+                        Lignes de bus
+                    </Link>
+                    <Link to="/metro" onClick={() => document.getElementById('menu-toggle').checked = false}>
+                        Horaires du métro
+                    </Link>
+                    <Link to="/velo" onClick={() => document.getElementById('menu-toggle').checked = false}>
+                        Velos Star
+                    </Link>
+                </div>
             </nav>
             {isHome ? (
                 <div className='content_home'>
