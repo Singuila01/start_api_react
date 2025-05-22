@@ -21,6 +21,9 @@ function Header() {
                 <Link to="/velo">
                     Velos Star
                 </Link>
+                <Link to="/traffic">
+                    Traffic
+                </Link>
             </nav>
             <nav className='mobile_nav'>
                 <input type="checkbox" id="menu-toggle" className="menu-toggle" />
