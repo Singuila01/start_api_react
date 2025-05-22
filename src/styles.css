@@ -211,12 +211,12 @@ header.header .content_other {
     list-style-type: none;
 }
 
-.bus-lines{
+.bus-lines, .traffic{
     width: 100%;
     max-width: 1650px;
     margin: 0 auto;
 }
-.bus-lines h1{
+.bus-lines h1, .traffic h1{
     text-align: center;
     font-size: 2.5rem;
     margin: 20px 0;
@@ -225,10 +225,31 @@ header.header .content_other {
     text-align: center;
     padding: 10px 0;
 }
-.bus-lines ul{
+.traffic h2{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.traffic h3{
+    margin: 10px 0;
+}
+.traffic li {
+    padding: 20px;
+    border-radius: 20px;
+    transition: .3s all;
+}
+.traffic li:hover{
+    transform: scale(1.02);
+    background: #d1d1d1;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+}
+.traffic li a{
+    color: #000;
+    text-decoration: none;
+}
+.bus-lines ul, .traffic ul{
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 20px;
     margin: 0 auto;
     padding: 0 40px;
     box-sizing: border-box;
@@ -298,6 +319,10 @@ header.header .content_other {
     .container .list ul{
         grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
+
+    .traffic ul{
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
 }
 @media screen and (max-width: 768px) {
     header.header .desktop_nav{
@@ -357,6 +382,10 @@ header.header .content_other {
         height: 20px;
         width: 20px;
         margin: 0 auto;
+    }
+
+    .traffic ul{
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
 
     /* header.header .mobile_nav{
@@ -421,6 +450,12 @@ header.header .content_other {
     header.header .mobile_nav input.menu-toggle:checked ~ .menu-icon.close span::after{
         display: block;
     } */
+}
+@media screen and (max-width: 600px) {
+    .traffic ul{
+        grid-template-columns: minmax(0, 1fr);
+    }
+    
 }
 @media screen and (max-width: 425px) {
     .container .list ul{
