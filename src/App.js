@@ -7,6 +7,7 @@ import ParcRelais from './pages/ParcRelais';
 import Line from './pages/Line';
 import VeloStar from './pages/VeloStar';
 import StationVelo from './pages/StationVelo';
+import Traffic from './pages/Traffic';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/parc" element={<ParcRelais />} />
                 <Route path="/velo" element={<VeloStar />} />
                 <Route path="/velo/:id" element={<StationVelo />} />
+                <Route path="/traffic" element={<Traffic />} />
             </Routes>
             <Footer />
         </Router>
