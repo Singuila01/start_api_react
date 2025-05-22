@@ -29,8 +29,7 @@ function Header() {
                     <span></span>
                     <span></span>
                 </label>
-                <input type="checkbox" id="menu-disable" className="menu-disable"/>
-                <label htmlFor="menu-disable" className="menu-icon close">
+                <label htmlFor="menu-toggle" className="menu-icon close">
                     <span></span>
                 </label>
                 <div className="mobile_menu">
