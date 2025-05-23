@@ -36,7 +36,7 @@ function BusLines() {
                         <p className='nom_long'>({line.nomlong})</p>
                     </Link>
                 </li>
-            ))}
+                ))}
             </ul>
         </div>
     );
