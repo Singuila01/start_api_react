@@ -92,7 +92,7 @@ header.header .content_other {
     margin: 20px auto;
 }
 
-.container .presentation, .container .description{
+.container .presentation, .container .description, .container .list ul{
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
@@ -119,20 +119,29 @@ header.header .content_other {
 .container .list ul{
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 20px;
     margin: 0 auto;
-    padding: 40px 0;
     box-sizing: border-box;
     list-style: none;
     text-align: center;
-    background: #696969;
 }
 .container .list ul li{
-    padding: 120px 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
     border-radius: 10px;
     box-sizing: border-box;
     overflow: hidden;
+    background: #696969;
+    padding: 40px;
 }
-.container .list a{
+.container .list ul li a{
+    align-items: end;
+    width: 100%;
+    max-width: max-content;
+    text-align: right;
     height: 100%;
     text-decoration: none;
     color: #000;
