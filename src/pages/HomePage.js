@@ -12,7 +12,7 @@ const HomePage = () => (
         </div>
         <div className='list'>
             <ul>
-                <li>
+                {/* <li>
                     <p>Consultez les horaires en temps réel pour chaque arrêt <span>comming soon</span></p>
                 </li>
                 <li>
@@ -20,15 +20,18 @@ const HomePage = () => (
                 </li>
                 <li>
                     <p>Visualisez les itinéraires de bus et de métro</p>
+                </li> */}
+                <li>
+                    <p>Accédez aux informations détaillées sur chaque ligne</p>
+                    <Link to="/bus">Voir +</Link>
                 </li>
                 <li>
-                    <Link to="/bus">Accédez aux informations détaillées sur chaque ligne</Link>
-                </li>
-                <li>
-                    <Link to="/parc">Visualiez les différents parking relais présents sur le réseau</Link>
+                    <p>Visualiez les différents parking relais présents sur le réseau</p>
+                    <Link to="/parc">Voir +</Link>
                 </li>
                 <li>
                     <p>Découvrez les nouveautés et alertes du réseau</p>
+                    <Link to="/traffic">Voir +</Link>
                 </li>
             </ul>
         </div>
