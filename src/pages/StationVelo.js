@@ -39,14 +39,18 @@ const Line = () => {
     if (loading) return <div className='loading'><p>Chargement...</p></div>;
 
     return (
-        <div className="line" style={{ padding: 24 }}>
-            <div>
-                <h1>{station.nom}</h1>
-            </div>
-            <div>
-                <h1>{station.etat}</h1>
-                <p>{station.nombreemplacementsactuels} places totales.</p>
-                <p>{station.nombrevelosdisponibles} vélos restants.</p>
+        <div className="container">
+            <div className="content">
+                <div className="line" style={{ padding: 24 }}>
+                    <div>
+                        <h1>{station.nom}</h1>
+                    </div>
+                    <div>
+                        <h1>{station.etat}</h1>
+                        <p>{station.nombreemplacementsactuels} places totales.</p>
+                        <p>{station.nombrevelosdisponibles} vélos restants.</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

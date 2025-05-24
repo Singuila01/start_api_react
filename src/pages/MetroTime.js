@@ -71,41 +71,45 @@ function MetroTime() {
     );
 
     return (
-        <div className="metro" style={{ padding: 24 }}>
-            <h1>Horaires du métro</h1>
-            <label>
-                Choisissez une station :
-                <select
-                    value={selectedStation || ""}
-                    onChange={e => setSelectedStation(e.target.value)}
-                >
-                    <option value="">-- Sélectionnez --</option>
-                    {uniqueStations.map(station => (
-                        <option key={station.idarret} value={station.idarret}>
-                            {station.nomarret}
-                        </option>
-                    ))}
-                </select>
-            </label>
-            {selectedStation && (
-                <div style={{ marginTop: 24 }}>
-                    <h2>Prochains passages :</h2>
-                    <ul>
-                        {stations
-                            .filter(station => station.idarret === selectedStation)
-                            .map((station, idx) => (
-                                <li key={idx}>
-                                    <p><b>Direction:</b> {station.destination}</p>
-                                    <p><b>Prochain métro:</b> {minutesOne } minutes</p>
-                                    <p><b>Métro suivant:</b> {minutesTwo} minutes</p>
-                                </li>
+        <div className="container">
+            <div className="content">
+                <div className="metro" style={{ padding: 24 }}>
+                    <h1>Horaires du métro</h1>
+                    <label>
+                        Choisissez une station :
+                        <select
+                            value={selectedStation || ""}
+                            onChange={e => setSelectedStation(e.target.value)}
+                        >
+                            <option value="">-- Sélectionnez --</option>
+                            {uniqueStations.map(station => (
+                                <option key={station.idarret} value={station.idarret}>
+                                    {station.nomarret}
+                                </option>
                             ))}
-                        {stations.filter(station => station.idarret === selectedStation).length === 0 && (
-                            <li>Aucun horaire disponible</li>
-                        )}
-                    </ul>
+                        </select>
+                    </label>
+                    {selectedStation && (
+                        <div style={{ marginTop: 24 }}>
+                            <h2>Prochains passages :</h2>
+                            <ul>
+                                {stations
+                                    .filter(station => station.idarret === selectedStation)
+                                    .map((station, idx) => (
+                                        <li key={idx}>
+                                            <p><b>Direction:</b> {station.destination}</p>
+                                            <p><b>Prochain métro:</b> {minutesOne } minutes</p>
+                                            <p><b>Métro suivant:</b> {minutesTwo} minutes</p>
+                                        </li>
+                                    ))}
+                                {stations.filter(station => station.idarret === selectedStation).length === 0 && (
+                                    <li>Aucun horaire disponible</li>
+                                )}
+                            </ul>
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 }

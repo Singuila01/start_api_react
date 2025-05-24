@@ -38,14 +38,18 @@ const Line = () => {
     }
 
     return (
-        <div className="line" style={{ padding: 24 }}>
-            <div>
-                <h1 style={{ backgroundColor: busLine.couleurligne, color: busLine.couleurtexteligne }}>{busLine.nomcourt}</h1>
-            </div>
-            <div>
-                <h1>{busLine.nomlong}</h1>
-                <p>Type: {busLine.nomfamillecommerciale}</p>
-                <p>Date de lancement: {formatDateToFrench(busLine.datedebutversion)}</p>
+        <div className="container">
+            <div className="content">
+                <div className="line" style={{ padding: 24 }}>
+                    <div>
+                        <h1 style={{ backgroundColor: busLine.couleurligne, color: busLine.couleurtexteligne }}>{busLine.nomcourt}</h1>
+                    </div>
+                    <div>
+                        <h1>{busLine.nomlong}</h1>
+                        <p>Type: {busLine.nomfamillecommerciale}</p>
+                        <p>Date de lancement: {formatDateToFrench(busLine.datedebutversion)}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

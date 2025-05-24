@@ -26,18 +26,22 @@ function BusLines() {
     if (loading) return <div className='loading'><p>Chargement...</p></div>;
 
     return (
-        <div className='bus-lines'>
-            <h1>Lignes de bus</h1>
-            <ul>
-                {lines.map((line, index) => (
-                <li key={index}>
-                    <Link href={`/bus/${line.id}`} to={`/bus/${line.id}`}>
-                        <h2 style={{ backgroundColor: line.couleurligne }}>{line.nomcourt}</h2>
-                        <p className='nom_long'>({line.nomlong})</p>
-                    </Link>
-                </li>
-                ))}
-            </ul>
+        <div className='container'>
+            <div className='content'>
+                <h1>Lignes de bus</h1>
+                <div className='bus-lines'>
+                    <ul>
+                        {lines.map((line, index) => (
+                        <li key={index}>
+                            <Link href={`/bus/${line.id}`} to={`/bus/${line.id}`}>
+                                <h2 style={{ backgroundColor: line.couleurligne }}>{line.nomcourt}</h2>
+                                <p className='nom_long'>({line.nomlong})</p>
+                            </Link>
+                        </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 }

@@ -45,19 +45,23 @@ function Traffic() {
     if (loading) return <div className='loading'><p>Chargement...</p></div>;
 
     return (
-        <div className='traffic'>
-            <h1>Traffic</h1>
-            <ul>
-                {infos.map((info, index) => (
-                    <li key={index}>
-                        <Link to={info.url} target="_blank">
-                            <h2>{info.titre}</h2>
-                            <h3>Du {formatDateToFrench(info.debutvalidite)} <br/> au {formatDateToFrench(info.finvalidite)}</h3>
-                            <p>{replaceText(info.description)}</p>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+        <div className='container'>
+            <div className='content'>
+                <h1>Traffic</h1>
+                <div className='traffic'>
+                    <ul>
+                        {infos.map((info, index) => (
+                            <li key={index}>
+                                <Link to={info.url} target="_blank">
+                                    <h2>{info.titre}</h2>
+                                    <h3>Du {formatDateToFrench(info.debutvalidite)} <br/> au {formatDateToFrench(info.finvalidite)}</h3>
+                                    <p>{replaceText(info.description)}</p>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 }

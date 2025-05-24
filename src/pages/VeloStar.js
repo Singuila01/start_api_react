@@ -25,6 +25,7 @@ function VeloStar() {
     return (
         <div className="container">
             <div className="content">
+                <h1>VelosStar</h1>
                 <ul className="list-velo">
                     {velos.map(velo => (
                         <li key={velo.id} >

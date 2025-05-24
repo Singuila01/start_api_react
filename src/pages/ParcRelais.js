@@ -22,6 +22,7 @@ function ParcRelais() {
     return (
         <div className="container">
             <div className="content">
+                <h1>Parc relais</h1>
                 <ul className="list-parc">
                     {parcs.map(parc => (
                         <li key={parc.idarret} >

@@ -48,6 +48,9 @@ function Header() {
                     <Link to="/velo" onClick={() => document.getElementById('menu-toggle').checked = false}>
                         Velos Star
                     </Link>
+                    <Link to="/traffic" onClick={() => document.getElementById('menu-toggle').checked = false}>
+                        Traffic
+                    </Link>
                 </div>
             </nav>
             {isHome ? (
@@ -55,8 +58,7 @@ function Header() {
                     <h1>Bienvenue sur Rennes Transport Explorer</h1>
                 </div>
             ) : (
-                <div className='content_other'>
-                    <h1>Vous êtes sur la page XXX</h1>
+                <div className='content'>
                 </div>
             )}
         </header>
