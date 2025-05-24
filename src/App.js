@@ -8,6 +8,7 @@ import Line from './pages/Line';
 import VeloStar from './pages/VeloStar';
 import StationVelo from './pages/StationVelo';
 import Traffic from './pages/Traffic';
+import MetroTest from './pages/MetroTest';
 import Header from './Header';
 import Footer from './Footer';
 
