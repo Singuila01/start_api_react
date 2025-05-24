@@ -10,7 +10,7 @@ const HomePage = () => (
                 Retrouvez les horaires en temps réel, les itinéraires, les arrêts, les lignes de bus et de métro, ainsi que de nombreuses données utiles pour vos déplacements quotidiens.
             </p>
         </div>
-        <div className='list'>
+        <div className='list features'>
             <ul>
                 {/* <li>
                     <p>Consultez les horaires en temps réel pour chaque arrêt <span>comming soon</span></p>
