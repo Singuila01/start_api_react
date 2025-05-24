@@ -143,11 +143,19 @@ header.header .content_other {
     box-sizing: border-box;
     list-style: none;
 }
-.container .content .list-parc li, .container .content .list-velo li{
-    background: #fff;
+.container .content li{
+    background: #f1f1f1;
     padding: 20px;
     border-radius: 20px;
+    filter: none;
+    transition: .5s all;
+}
+.container .content li:hover{
+    background: #f1f1f1;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+}
+.container .content li:hover>*{
+    transform: scale(1.05);
 }
 .container .content .list-parc li h2{
     display: block;
@@ -221,16 +229,6 @@ header.header .content_other {
 }
 .container .content .traffic h3{
     margin: 10px 0;
-}
-.container .content .traffic li {
-    padding: 20px;
-    border-radius: 20px;
-    transition: .3s all;
-}
-.container .content .traffic li:hover{
-    transform: scale(1.02);
-    background: #d1d1d1;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
 }
 .container .content .traffic li a{
     color: #000;
