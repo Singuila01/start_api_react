@@ -14,7 +14,7 @@ select option span{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: calc(100vh - 120px);
 }
 .loading p{
     font-size: 30px;
