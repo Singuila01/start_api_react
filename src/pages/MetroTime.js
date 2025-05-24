@@ -28,47 +28,38 @@ function getMinutesBetween(date1Str, date2Str) {
 function MetroTime() {
     const [stations, setStations] = useState([]);
     const [selectedStation, setSelectedStation] = useState(null);
-    const [schedules, setSchedules] = useState([]);
-    const [minutesOne, setMinutesOne] = useState([]);
-    const [minutesTwo, setMinutesTwo] = useState([]);
+    const [minutesOne, setMinutesOne] = useState(null);
+    const [minutesTwo, setMinutesTwo] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch("https://data.explore.star.fr/api/explore/v2.1/catalog/datasets/tco-metro-circulation-deux-prochains-passages-tr/records?order_by=idarret&limit=100");
             const data = await res.json();
-
-            if (data.results.length > 0) {
-                const premier_passage = data.results[0].arriveefirsttrain;
-                const second_passage = data.results[0].arriveesecondtrain;
-                const maintenant = getFormattedNow();
-
-                const calcul_premier = getMinutesBetween(maintenant, premier_passage);
-                const calcul_second = getMinutesBetween(maintenant, second_passage);
-                
-                setStations(data.results);
-                setMinutesOne(calcul_premier);
-                setMinutesTwo(calcul_second);
-
-                setLoading(false);
-            }
+            setStations(data.results);
+            setLoading(false);
         };
 
         fetchData();
     }, []);
 
-    // useEffect(() => {
-    //     if (selectedStation) {
-    //         // Remplacer par un fetch vers l'API réelle
-    //         setSchedules(stations[selectedStation] || []);
-    //     }
-    // }, [selectedStation]);
+    useEffect(() => {
+        if (!selectedStation) {
+            setMinutesOne(null);
+            setMinutesTwo(null);
+            return;
+        }
+        const now = getFormattedNow();
+        const station = stations.find(st => st.idarret === selectedStation);
+        if (station) {
+            const premier_passage = station.arriveefirsttrain;
+            const second_passage = station.arriveesecondtrain;
+            setMinutesOne(getMinutesBetween(now, premier_passage));
+            setMinutesTwo(getMinutesBetween(now, second_passage));
+        }
+    }, [selectedStation, stations]);
 
     if (loading) return <div className='loading'><p>Chargement...</p></div>;
-
-    const uniqueStations = Array.from(
-        new Map(stations.map(station => [station.idarret, station])).values()
-    );
 
     return (
         <div className="container">
@@ -82,7 +73,10 @@ function MetroTime() {
                             onChange={e => setSelectedStation(e.target.value)}
                         >
                             <option value="">-- Sélectionnez --</option>
-                            {uniqueStations.map(station => (
+                            {/* On filtre les doublons par nom de station */}
+                            {Array.from(
+                                new Map(stations.map(station => [station.nomarret, station])).values()
+                            ).map(station => (
                                 <option key={station.idarret} value={station.idarret}>
                                     {station.nomarret}
                                 </option>
@@ -93,16 +87,28 @@ function MetroTime() {
                         <div style={{ marginTop: 24 }}>
                             <h2>Prochains passages :</h2>
                             <ul>
+                                {/* On affiche tous les passages pour cette station, dans chaque direction */}
                                 {stations
-                                    .filter(station => station.idarret === selectedStation)
-                                    .map((station, idx) => (
-                                        <li key={idx}>
-                                            <p><b>Direction:</b> {station.destination}</p>
-                                            <p><b>Prochain métro:</b> {minutesOne } minutes</p>
-                                            <p><b>Métro suivant:</b> {minutesTwo} minutes</p>
-                                        </li>
-                                    ))}
-                                {stations.filter(station => station.idarret === selectedStation).length === 0 && (
+                                    .filter(st => st.nomarret === stations.find(s => s.idarret === selectedStation)?.nomarret)
+                                    .map((station, idx) => {
+                                        const now = getFormattedNow();
+                                        const minutesOne = getMinutesBetween(now, station.arriveefirsttrain);
+                                        const minutesTwo = getMinutesBetween(now, station.arriveesecondtrain);
+                                        return (
+                                            <li key={idx}>
+                                                <p>
+                                                    <b>Direction :</b> {station.destination}
+                                                </p>
+                                                <p>
+                                                    <b>Prochain métro :</b> {minutesOne} minutes
+                                                </p>
+                                                <p>
+                                                    <b>Métro suivant :</b> {minutesTwo} minutes
+                                                </p>
+                                            </li>
+                                        );
+                                    })}
+                                {stations.filter(st => st.nomarret === stations.find(s => s.idarret === selectedStation)?.nomarret).length === 0 && (
                                     <li>Aucun horaire disponible</li>
                                 )}
                             </ul>
